@@ -1,7 +1,7 @@
 # Install required packages
-# !pip install streamlit
-# !pip install streamlit-option-menu
-# !pip install plotly
+!pip install streamlit
+!pip install streamlit-option-menu
+!pip install plotly
 
 import streamlit as st
 import pandas as pd

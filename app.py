@@ -4,6 +4,7 @@
 # !pip install plotly
 
 import streamlit as st
+from streamlit_option_menu import option_menu
 import pandas as pd
 import numpy as np
 import plotly.express as px
@@ -1769,6 +1770,8 @@ elif page == "📈 Advanced Analytics":
                         - AUC Score: {best_auc:.1%}
                         - Accuracy: {metrics_df.loc[best_model_name, 'Accuracy']:.1%}
                         - F1 Score: {metrics_df.loc[best_model_name, 'F1']:.1%}
+                        - Precision: {metrics_df.loc[best_model_name, 'Precision']:.1%}
+                        - Recall: {metrics_df.loc[best_model_name, 'Recall']:.1%}
                         """)
 
                     with col2:

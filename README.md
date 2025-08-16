@@ -176,39 +176,39 @@ data = pd.read_csv('/content/drive/MyDrive/Customer_Churn/cleaned/final_model_re
 
 ![Live Monitoring](images/dashboard_fig1_monitoring.png)
 
-*Figure 8: Live Monitoring Dashboard - Real-time KPIs, risk distribution, and trend analysis*
+*Figure 1: Live Monitoring Dashboard - Real-time KPIs, risk distribution, and trend analysis*
 
 ![Data Pipeline](images/dashboard_fig2_pipeline.png)
 
-*Figure 9: Data Processing Pipeline - Automated feature engineering and quality monitoring*
+*Figure 2: Data Processing Pipeline - Automated feature engineering and quality monitoring*
 
 #### Prediction and Analysis Tools
 
 ![Prediction Engine](images/dashboard_fig3_prediction.png)
 
-*Figure 10: Churn Prediction Engine - Individual customer risk assessment with recommendations*
+*Figure 3: Churn Prediction Engine - Individual customer risk assessment with recommendations*
 
 ![Business Impact](images/dashboard_fig4_impact.png)
 
-*Figure 11: Business Impact Analysis - ROI calculations and campaign optimization metrics*
+*Figure 4: Business Impact Analysis - ROI calculations and campaign optimization metrics*
 
 #### Advanced Analytics Suite
 
 ![Feature Analysis](images/dashboard_fig5_features.png)
 
-*Figure 12: Feature Analysis - Interactive importance rankings and correlation analysis*
+*Figure 5: Feature Analysis - Interactive importance rankings and correlation analysis*
 
 ![Cohort Analysis](images/dashboard_fig6_cohorts.png)
 
-*Figure 13: Cohort Analysis - Customer segmentation and longitudinal behavior tracking*
+*Figure 6: Cohort Analysis - Customer segmentation and longitudinal behavior tracking*
 
 ![Model Training](images/dashboard_fig7_training.png)
 
-*Figure 14: Model Training Interface - Real-time algorithm comparison and optimization*
+*Figure 7: Model Training Interface - Real-time algorithm comparison and optimization*
 
 ![Alert System](images/dashboard_fig8_alerts.png)
 
-*Figure 15: Alert System - Proactive risk identification and escalation protocols*
+*Figure 8: Alert System - Proactive risk identification and escalation protocols*
 
 **Business Impact Results:**
 ```
@@ -254,11 +254,11 @@ Return on Investment: 89.2%
 ### Data Quality Overview
 ![Missing Value Analysis](images/fig1_missing_values.png)
 
-*Figure 1: Missing Value Analysis - Shows minimal missing data (0.045% in Last_Transaction_Date)*
+*Figure 9: Missing Value Analysis - Shows minimal missing data (0.045% in Last_Transaction_Date)*
 
 ![Customer Churn Distribution](images/fig2_churn_imbalance.png)
 
-*Figure 2: Customer Churn Imbalance - 79.7% existing vs 20.3% attrited customers*
+*Figure 10: Customer Churn Imbalance - 79.7% existing vs 20.3% attrited customers*
 
 ## Model Performance Results
 
@@ -288,12 +288,12 @@ Return on Investment: 89.2%
 ### Model Performance Visualization
 ![Model Performance](images/fig6_confusion_matrix_roc.png)
 
-*Figure 6: AdaBoost Confusion Matrix and ROC Curve - Shows 78.61% AUC with balanced precision-recall*
+*Figure 11: AdaBoost Confusion Matrix and ROC Curve - Shows 78.61% AUC with balanced precision-recall*
 
 ### Feature Importance Analysis
 ![Feature Importance](images/fig7_feature_importance.png)
 
-*Figure 7: Top 15 Feature Importances - Contact frequency (16.10%) and gender (14.35%) lead predictors*
+*Figure 12: Top 15 Feature Importances - Contact frequency (16.10%) and gender (14.35%) lead predictors*
 
 ## Business Impact Analysis
 
@@ -323,15 +323,15 @@ Return on Investment: 89.2%
 #### Customer Segmentation Patterns
 ![Churn by Card Category](images/fig3_churn_by_card.png)
 
-*Figure 3: Churn by Card Category - Blue cards show highest churn (30.5%), premium tiers more stable*
+*Figure 13: Churn by Card Category - Blue cards show highest churn (30.5%), premium tiers more stable*
 
 ![Churn by Income Category](images/fig4_churn_by_income.png)
 
-*Figure 4: Churn by Income Category - Relatively flat ~16% across income brackets*
+*Figure 14: Churn by Income Category - Relatively flat ~16% across income brackets*
 
 ![Churn by Education Level](images/fig5_churn_by_education.png)
 
-*Figure 5: Churn by Education Level - Doctorate highest, Post-graduate lowest churn rates*
+*Figure 15: Churn by Education Level - Doctorate highest, Post-graduate lowest churn rates*
 
 ### Critical Risk Factors Identified
 
@@ -453,8 +453,7 @@ Customer_Churn/
 │   └── utils/                      # Helper functions
 ├── Job Description                  # Project requirements
 ├── requirements.txt                # Python dependencies
-├── README.md                      # This file
-└── LICENSE                        # MIT License
+└── README.md                      # This file
 ```
 
 ### Development Pipeline Flow
@@ -494,6 +493,10 @@ Customer_Churn/
 - Business intelligence visualizations
 - Application testing and validation
 
+### Documentation
+
+You can access the executive [report]()
+
 ## Credits
 
 **Academic References:**
@@ -511,10 +514,10 @@ This project builds upon extensive research in customer churn prediction and mac
 - **TensorFlow** and **PyTorch** teams for deep learning frameworks
 - **Streamlit** team for the interactive dashboard framework
 - **Imbalanced-learn** contributors for SMOTEENN implementation
-- 
+
 **Data Source:**
 This project uses a synthetic credit card customer dataset designed for educational and research purposes. No real customer data was used in this analysis.
 
 ---
 
-If you found this project helpful, please consider giving it a ⭐ on GitHub!
+

@@ -1,7 +1,7 @@
 # Advanced Credit Card Customer Churn Prediction Using Ensemble and Deep Learning
 
-*Company Name: Capital One*
 *Reported by: Erika A.*
+*Fictional Company: Capital One*
 
 ## Project Description
 
@@ -134,7 +134,7 @@ data = pd.read_csv('/content/drive/MyDrive/Customer_Churn/cleaned/final_model_re
 ### Using the Interactive Dashboard
 
 **Access Methods:**
-- **Streamlit Link**: Open this link - 
+- **Streamlit Link**: https://capitalonecreditriskcustomerchurn.streamlit.app/ 
 
 **Authentication:** No authentication required for demo mode.
 

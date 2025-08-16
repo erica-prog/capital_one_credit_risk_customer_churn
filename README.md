@@ -1,6 +1,7 @@
 # Advanced Credit Card Customer Churn Prediction Using Ensemble and Deep Learning
 
 *Reported by: Erika A.*
+
 *Fictional Company: Capital One*
 
 ## Project Description

@@ -433,55 +433,79 @@ Based on the actual development pipeline using Google Colab notebooks:
 
 ```
 Customer_Churn/
-├── dataset/                          # Raw and processed data
-│   ├── synthetic_credit_card_data.csv  # Generated dataset
-│   └── processed_features.csv         # Feature engineered data
-├── cleaned/                          # Clean processed datasets
-│   └── final_model_ready_data.csv    # ML-ready dataset
-├── notebooks/                        # Development pipeline (Google Colab)
-│   ├── 01_synthetic_data_generation.ipynb    # Data creation
-│   ├── 02_data_quality_assessment_eda.ipynb  # EDA and quality analysis
-│   ├── 03_advanced_feature_engineering.ipynb # Feature creation
-│   ├── 04_feature_selection.ipynb           # Feature optimization
-│   ├── 05_models.ipynb                      # Model training and evaluation
-│   ├── 06_dashboard.ipynb                   # Streamlit app development
-│   └── 07_app_test.ipynb                    # Application testing
-├── documentation/                    # Research papers and guides
-│   └── Advanced Credit Card Customer Churn Prediction Using Ensemble and Deep Learning.pdf     # Main research document
-├── streamlit_app/                   # Production application
-│   ├── app.py                      # Main Streamlit dashboard
-│   ├── pages/                      # Dashboard components
-│   ├── models/                     # Trained model artifacts
-│   └── utils/                      # Helper functions
-├── Job Description                  # Project requirements
-├── requirements.txt                # Python dependencies
-└── README.md                      # This file
+├── dataset/                                    # Raw and processed data
+│   └── credit_card_churn_100k.csv             # Generated synthetic dataset (100k records)
+├── cleaned/                                    # Processed datasets with multiple versions
+│   ├── cleaned_data.csv                        # Initial cleaned dataset (13.8 MB)
+│   ├── final_data.csv                          # Feature engineered dataset (24.6 MB)
+│   ├── original/                               # Full feature sets after imputation
+│   │   ├── X_train_imputed.csv                 # Training features (18.7 MB)
+│   │   ├── X_val_imputed.csv                   # Validation features (4 MB)
+│   │   ├── X_test_imputed.csv                  # Test features (4 MB)
+│   │   ├── y_train.csv                         # Training labels (137 KB)
+│   │   ├── y_val.csv                           # Validation labels (29 KB)
+│   │   └── y_test.csv                          # Test labels (29 KB)
+│   ├── mi/                                     # Mutual Information selected features (top 50%)
+│   │   ├── X_train_mi.csv                      # MI-selected training features (9.1 MB)
+│   │   ├── X_val_mi.csv                        # MI-selected validation features (1.9 MB)
+│   │   └── X_test_mi.csv                       # MI-selected test features (1.9 MB)
+│   └── final_model_ready/                      # Production-ready datasets
+│       ├── X_train_balanced.csv                # SMOTEENN balanced training data (11.2 MB)
+│       ├── y_train_balanced.csv                # Balanced training labels (112 KB)
+│       ├── X_val_imbalanced.csv                # Original validation features (1.9 MB)
+│       ├── y_val_imbalanced.csv                # Original validation labels (29 KB)
+│       ├── X_test_imbalanced.csv               # Original test features (1.9 MB)
+│       └── y_test_imbalanced.csv               # Original test labels (29 KB)
+├── notebooks/                                  # Development pipeline (Google Colab)
+│   ├── 01_synthetic_data_generation.ipynb         # Data creation and simulation
+│   ├── 02_data_quality_assessment_eda.ipynb       # EDA and quality analysis
+│   ├── 03_advanced_feature_engineering.ipynb      # Feature creation and RFM analysis
+│   ├── 04_feature_selection.ipynb                 # Mutual Information selection & SMOTEENN
+│   ├── 05_models.ipynb                            # Model training and evaluation
+│   └── 06_app_test.ipynb                          # Application testing
+├── documentation/                              # Research papers and guides
+│   └── Advanced Credit Card Customer Churn Prediction Using Ensemble and Deep Learning.pdf # Research document 
+├── streamlit_app/                             # Production application
+│   ├── app.py                                 # Main Streamlit dashboard
+│   ├── pages/                                 # Dashboard components
+│   ├── models/                                # Trained model artifacts
+│   └── utils/                                 # Helper functions
+├── requirements.txt                          # Python dependencies
+├── README.md                                # This file
+└── LICENSE                                  # MIT License
 ```
 
 ### Development Pipeline Flow
 
 **1. Data Generation (`synthetic_data_generation.ipynb`)**
 - Creates realistic synthetic credit card customer dataset
-- Generates 100,000 customer records with 21 features
+- Generates 100,000 customer records with 21 core features
 - Ensures proper class distribution (80/20 existing/churned)
+- Output: `credit_card_churn_100k.csv` (13.3 MB)
 
 **2. Data Quality Assessment (`data_quality_assessment_eda.ipynb`)**
-- Comprehensive exploratory data analysis
-- Missing value analysis and treatment
+- Comprehensive exploratory data analysis and visualization
+- Missing value analysis (0.045% in Last_Transaction_Date)
 - Business rule validation and consistency checks
-- Customer behavior pattern identification
+- Customer behavior pattern identification across demographics
+- Output: `cleaned_data.csv` (13.8 MB)
 
 **3. Feature Engineering (`advanced_feature_engineering.ipynb`)**
-- Financial health indicators creation
-- Behavioral pattern features (RFM analysis)
-- Risk scoring and binary flags
+- Financial health indicators (Credit_Health_Score, Payment_Capacity)
+- Behavioral pattern features (Activity_Consistency, Transaction_Efficiency)
+- RFM analysis (Recency, Frequency, Monetary segmentation)
+- Risk scoring and binary flags (High_Util_Risk, Declining_Usage_Risk)
 - Temporal trend analysis features
+- Output: `final_data.csv` (24.6 MB with engineered features)
 
 **4. Feature Selection (`feature_selection.ipynb`)**
-- Statistical feature importance analysis
-- Correlation analysis and multicollinearity removal
-- Optimal feature subset identification
-- Model performance impact assessment
+- **Mutual Information Analysis**: Identifies top 50% most informative features
+- **Data Imputation**: IterativeImputer with BayesianRidge for missing values
+- **SMOTEENN Balancing**: Hybrid approach combining SMOTE oversampling + ENN cleaning
+  - Training: 59% Class 1, 41% Class 0 (balanced from 80/20)
+  - Validation/Test: Maintain original imbalanced distribution
+- **Train/Val/Test Split**: 70/15/15 with stratified sampling
+- Output: Multiple datasets in `/original`, `/mi`, and `/final_model_ready`
 
 **5. Model Development (`models.ipynb`)**
 - 8 algorithm comparison (AdaBoost, XGBoost, RF, etc.)

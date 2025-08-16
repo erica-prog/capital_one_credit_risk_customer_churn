@@ -93,7 +93,6 @@ streamlit>=1.28.0
 plotly>=5.15.0
 seaborn>=0.12.0
 matplotlib>=3.7.0
-shap>=0.42.0
 joblib>=1.3.0
 ```
 

@@ -24,7 +24,7 @@ This project addresses the critical business challenge of customer retention in 
 
 **Key challenges faced and solutions:**
 - **Class imbalance**: Solved using SMOTEENN hybrid approach, improving F1-score to 46.10%
-- **Feature interpretability**: Implemented SHAP values and feature importance analysis for business transparency
+- **Feature interpretability**: Implemented feature importance analysis for business transparency
 - **Overfitting prevention**: Used 5-fold cross-validation and rigorous train/validation/test splits (65.65%/17.17%/17.18%)
 - **Business applicability**: Developed comprehensive ROI analysis showing $384,750 annual net benefit
 

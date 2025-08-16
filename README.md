@@ -489,7 +489,7 @@ Customer_Churn/
 - Performance evaluation and business impact analysis
 - Model selection and validation
 
-**6. Application Development (`dashboard.ipynb` + `app_test.ipynb`)**
+**6. Application Development (`app.ipynb`)**
 - Interactive Streamlit dashboard creation
 - Real-time prediction capabilities
 - Business intelligence visualizations

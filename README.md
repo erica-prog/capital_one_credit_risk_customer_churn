@@ -465,11 +465,7 @@ Customer_Churn/
 │   └── 06_app_test.ipynb                          # Application testing
 ├── documentation/                              # Research papers and guides
 │   └── Advanced Credit Card Customer Churn Prediction Using Ensemble and Deep Learning.pdf # Research document 
-├── streamlit_app/                             # Production application
-│   ├── app.py                                 # Main Streamlit dashboard
-│   ├── pages/                                 # Dashboard components
-│   ├── models/                                # Trained model artifacts
-│   └── utils/                                 # Helper functions
+├── app.py                                     # Main Streamlit dashboard
 ├── requirements.txt                          # Python dependencies
 ├── README.md                                # This file
 └── LICENSE                                  # MIT License

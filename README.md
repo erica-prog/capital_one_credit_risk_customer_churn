@@ -2,7 +2,8 @@
 
 *Reported by: Erika A.*
 
-*Fictional Company: Capital One*
+You can access the full [executive report](https://github.com/erica-prog/capital_one_credit_risk_customer_churn/blob/main/Advanced%20Credit%20Card%20Customer%20Churn%20Prediction%20Using%20Ensemble%20and%20Deep%20Learning.pdf) and the [streamlit dashboard](https://capitalonecreditriskcustomerchurn.streamlit.app/) on this topic. 
+
 
 ## Project Description
 
@@ -134,7 +135,8 @@ data = pd.read_csv('/content/drive/MyDrive/Customer_Churn/cleaned/final_model_re
 ### Using the Interactive Dashboard
 
 **Access Methods:**
-- **Streamlit Link**: https://capitalonecreditriskcustomerchurn.streamlit.app/ 
+- **Streamlit Link**: https://capitalonecreditriskcustomerchurn.streamlit.app/
+- **Instructions**: Use the 'credit_card_churn_100k.csv' to generate your results 
 
 **Authentication:** No authentication required for demo mode.
 
@@ -492,10 +494,6 @@ Customer_Churn/
 - Real-time prediction capabilities
 - Business intelligence visualizations
 - Application testing and validation
-
-### Documentation
-
-You can access the executive [report]()
 
 ## Credits
 

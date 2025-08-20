@@ -58,7 +58,7 @@ This project addresses the critical business challenge of customer retention in 
 1. **Set up Google Colab Environment** (Recommended)
 ```python
 # Install required packages in Colab
-!pip install streamlit plotly xgboost imbalanced-learn shap
+!pip install streamlit plotly xgboost imbalanced-learn 
 
 # Mount Google Drive to access project files
 from google.colab import drive
